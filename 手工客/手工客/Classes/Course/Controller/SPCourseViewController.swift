@@ -9,87 +9,60 @@
 import UIKit
 
 class SPCourseViewController: UITableViewController {
-
+    var previueButton : UIButton = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //        设置导航条的内容
+        setUpNavigationBar()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+}
+extension SPCourseViewController{
+    
+    
+    func setUpNavigationBar(){
+        //        left
+        navigationItem.leftBarButtonItem = item(image:UIImage.init(named:"nav_jilu")!,target: self, action: #selector(jump))
+        //        right
+        navigationItem.rightBarButtonItem = item(image:UIImage.init(named:"nav_man")!,target: self, action: #selector(jump))
+        //        backgroundColor
+        navigationController?.navigationBar.setBackgroundImage(UIImage.init(named: "navigationBarBg")!, for: .default)
+        //        middle
+        let array = ["图文","视频","专题"]
+        let middleView = UIView()
+        var btnX : CGFloat = 0
+        let btnY : CGFloat = 0
+        let btnW : CGFloat = 70
+        let btnH : CGFloat = 17
+        let margin : CGFloat = 0.5
+        middleView.backgroundColor = UIColor(white: 1.0, alpha: 0.6)
+        middleView.frame = CGRect(x: 0, y: 0, width: (btnW + margin) * CGFloat(array.count) - margin, height: btnH)
+        for i in 0 ..< array.count {
+            let button = UIButton(type: .custom)
+            button.tag = i
+            button.backgroundColor = UIColor.red
+            button.setTitle(array[i], for: .normal)
+            button.sizeToFit()
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+            button.setTitleColor(UIColor(red: 245.0, green: 245.0, blue: 245.0, alpha: 0.7), for: .normal)
+            button.setTitleColor(UIColor.white, for: .selected)
+            btnX = (btnW + margin) * CGFloat(i)
+            button.frame = CGRect(x: btnX  , y: btnY, width: btnW, height: btnH)
+            //            监听按钮点击
+            button.addTarget(self, action: #selector(topClick(button:)), for: .touchUpInside)
+            middleView.addSubview(button)
+        }
+        navigationItem.titleView = middleView
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    
+    func jump(){
+        
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    func topClick(button : UIButton ){
+        previueButton.isSelected = false
+        button.isSelected = !button.isSelected
+        previueButton = button
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

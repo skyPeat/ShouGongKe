@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84A7E5D01E0699F3000063A1 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7E5CF1E0699F3000063A1 /* UIBarButtonItem.swift */; };
 		84FCBF371E052FBF00800F37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCBF361E052FBF00800F37 /* AppDelegate.swift */; };
 		84FCBF3E1E052FBF00800F37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FCBF3D1E052FBF00800F37 /* Assets.xcassets */; };
 		84FCBF411E052FBF00800F37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FCBF3F1E052FBF00800F37 /* LaunchScreen.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84A7E5CF1E0699F3000063A1 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		84FCBF331E052FBF00800F37 /* 手工客.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "手工客.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FCBF361E052FBF00800F37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FCBF3D1E052FBF00800F37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		84FCBF621E05361700800F37 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				84A7E5CF1E0699F3000063A1 /* UIBarButtonItem.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -331,12 +334,13 @@
 			attributes = {
 				CLASSPREFIX = SP;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "tianfeng pan";
 				TargetAttributes = {
 					84FCBF321E052FBF00800F37 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = EQ5S6DVB5G;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -376,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FCBF691E05381A00800F37 /* SPHomeViewController.swift in Sources */,
+				84A7E5D01E0699F3000063A1 /* UIBarButtonItem.swift in Sources */,
 				84FCBF6D1E05384400800F37 /* SPFairViewController.swift in Sources */,
 				84FCBF711E05386D00800F37 /* SPCrafterCircleController.swift in Sources */,
 				84FCBF671E0537F300800F37 /* SPNavigationController.swift in Sources */,
@@ -413,8 +418,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -457,8 +464,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -477,6 +486,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -492,6 +502,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ptf.www.ptf.---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -506,6 +517,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ptf.www.ptf.---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -528,6 +540,7 @@
 				84FCBF471E052FBF00800F37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
